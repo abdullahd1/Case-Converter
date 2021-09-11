@@ -13,11 +13,11 @@ lowerCase.addEventListener("click", function (){
 });
 
 properCase.addEventListener("click", function (){
-    let words = text.value.split(" ");
+    let words = text.value.toLowerCase().split(" ");
     // console.log(typeof (words));
     // console.log(words);
     for (let i = 0; i < words.length; i++){
-       words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
     }
     text.value = words.join(" ");
 });
