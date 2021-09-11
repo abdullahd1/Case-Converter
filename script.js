@@ -14,8 +14,8 @@ lowerCase.addEventListener("click", function (){
 
 properCase.addEventListener("click", function (){
     let words = text.value.split(" ");
-    console.log(typeof (words));
-    console.log(words);
+    // console.log(typeof (words));
+    // console.log(words);
     for (let i = 0; i < words.length; i++){
        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
     }
@@ -24,12 +24,12 @@ properCase.addEventListener("click", function (){
 
 sentenceCase.addEventListener("click", function (){
     // console.log(typeof (sentence));
-    console.log(text.value);
+    // console.log(text.value);
     let sentence = text.value.toLowerCase().split(". ");
     for (let i = 0; i < sentence.length; i++){
         sentence[i] = sentence[i][0].toUpperCase() + sentence[i].substr(1);
     }
-    console.log(sentence);
+    // console.log(sentence);
     text.value = sentence.join(". ");
 })
 
