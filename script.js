@@ -2,6 +2,7 @@ let upperCase = document.getElementById("upper-case");
 let lowerCase = document.getElementById("lower-case");
 let properCase = document.getElementById("proper-case");
 let sentenceCase = document.getElementById("sentence-case");
+let saveTextFile = document.getElementById("save-text-file");
 let text = document.querySelector("textarea");
 
 upperCase.addEventListener("click", function () {
@@ -33,3 +34,12 @@ sentenceCase.addEventListener("click", function (){
     text.value = sentence.join(". ");
 })
 
+saveTextFile.addEventListener("click", function (){
+    let elment = document.createElement("a");
+    elment.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text.value));
+    elment.setAttribute('download', "text.txt");
+    elment.style.display = "none";
+    document.body.appendChild(elment);
+    elment.click();
+    document.body.removeChild(elment);
+})
